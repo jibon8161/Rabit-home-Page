@@ -4,7 +4,7 @@ import { BsTwitterX } from "react-icons/bs";
 import dlr from "./png-clipart-money-dollars-money-dollar-removebg-preview.png";
 import img9 from "./asset/9.png";
 import img7 from "./asset/7.png";
-
+import { BsFillFastForwardBtnFill } from "react-icons/bs";
 const Home = () => {
   return (
     <div className="text-[#ff5f1f] min-h-screen overflow-x-hidden">
@@ -32,15 +32,15 @@ const Home = () => {
           </div>
 
           <div className="col-span-8">
-            <img src={dlr} alt="Dollar" className="h-54 mx-auto w-32" />
+            <img src={dlr} alt="Dollar" className="h-54 mx-auto w-54" />
           </div>
 
           <div className="col-span-2 mt-6">
             <button className="indicator">
-              <span className="indicator-item badge text-white">
+              <span className="indicator-item badge text-white text-sm mr-16">
                 Coming soon
               </span>
-              <div className="border-2 p-6 rounded-full text-xl shadow-lg shadow-orange-600 text-center">
+              <div className="border-2 p-4 rounded-full text-xl shadow-lg shadow-orange-600 text-center">
                 Blackpaper
               </div>
             </button>
@@ -136,8 +136,13 @@ const Home = () => {
           />
           <div className="col-span-1"></div>
         </div>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg w-full p-0 rounded-full shadow-lg shadow-white bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 hover:bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12">
-          <span className="animate-bounce lg:text-4xl"> Play Now</span>
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg lg:w-full lg:p-0 rounded-full shadow-lg shadow-white bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 hover:bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12">
+          <span className="text-4xl animate-bounce text-orange-600">
+            {" "}
+            <BsFillFastForwardBtnFill />
+          </span>
+
+          <span className="animate-bounce text-4xl"> Play Now</span>
         </button>
       </div>
       <div className="lg:mt-36 mt-16 text-3xl">
@@ -146,7 +151,7 @@ const Home = () => {
           <p className="lg:text-6xl text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
             March 2024
           </p>
-          <div className="text-left">
+          <div className="text-left text-base">
             <li>Basic game</li>
             <li>Mining updates</li>
             <li>Earn tasks</li>
