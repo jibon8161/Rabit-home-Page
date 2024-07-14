@@ -7,7 +7,7 @@ import img7 from "./asset/7.png";
 import { BsFillFastForwardBtnFill } from "react-icons/bs";
 const Home = () => {
   return (
-    <div className="text-[#ff5f1f] min-h-screen overflow-x-hidden">
+    <div className="text-[#ff5f1f] ">
       <div className="container mx-auto px-4">
         {/* Grid for desktop layout */}
         <div className="hidden lg:grid grid-cols-12 gap-4 mt-8">
@@ -136,18 +136,46 @@ const Home = () => {
           />
           <div className="col-span-1"></div>
         </div>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg lg:w-full lg:p-0 rounded-full shadow-lg shadow-white bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 hover:bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12">
+        {/* <button className="btn  btn-md  md:btn-md  lg:w-full lg:p-0    rounded-full shadow-lg shadow-white bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 hover:bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12">
           <span className="text-4xl animate-bounce text-orange-600">
             {" "}
             <BsFillFastForwardBtnFill />
           </span>
 
-          <span className="animate-bounce text-4xl"> Play Now</span>
-        </button>
+          <span className=" lg:text-4xl text-base "> Play Now</span>
+        </button> */}
+      <a href="#_" class="relative rounded-full inline-flex items-center justify-start py-3 pl-4 pr-12 w-full overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out shadow-lg shadow-white hover:pl-10 hover:pr-6 bg-gray-50 group hover:bg-orange-600 hover:shadow-orange-600 mt-12">
+  <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#171719] group-hover:h-full"></span>
+
+  <span class="relative w-full text-center transition-colors duration-200 ease-in-out group-hover:text-white text-2xl">
+    Play Now
+  </span>
+</a>
+
       </div>
       <div className="lg:mt-36 mt-16 text-3xl">
         <p className="">Roadmap</p>
         <div className="container mx-auto p-6 w-full lg:flex justify-around items-center rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12">
+          <p className="lg:text-6xl text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
+            March 2024
+          </p>
+          <div className="text-left text-base">
+            <li>Basic game</li>
+            <li>Mining updates</li>
+            <li>Earn tasks</li>
+          </div>
+        </div>
+        <div className="container mx-auto p-6 w-full lg:flex justify-around items-center rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-8 mt-16">
+          <p className="lg:text-6xl text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
+            March 2024
+          </p>
+          <div className="text-left text-base">
+            <li>Basic game</li>
+            <li>Mining updates</li>
+            <li>Earn tasks</li>
+          </div>
+        </div>
+        <div className="container mx-auto p-6 w-full lg:flex justify-around items-center rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-8 mt-16">
           <p className="lg:text-6xl text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
             March 2024
           </p>
