@@ -1,0 +1,44 @@
+/* styles.css */
+.multi-glow-shadow {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px; /* Adds space between the divs */
+}
+
+.multi-glow-shadow::before {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Glow only at the bottom */
+  right: 0; /* Glow only on the right */
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: 0 0 10px 5px rgba(255, 69, 0, 0.7), /* orange glow */
+              0 0 20px 10px rgba(255, 0, 0, 0.5); /* red glow */
+  animation: glow 2s infinite alternate;
+}
+
+.multi-glow-shadow:hover {
+  transform: scale(1.05);
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px 5px rgba(255, 69, 0, 0.7), 0 0 20px 10px rgba(255, 0, 0, 0.5);
+  }
+  to {
+    box-shadow: 0 0 15px 7px rgba(255, 69, 0, 0.9), 0 0 25px 12px rgba(255, 0, 0, 0.7);
+  }
+}
+
+@media (max-width: 1023px) {
+  .multi-glow-shadow::before {
+    bottom: initial; /* No bottom glow on smaller screens */
+    top: -5px; /* Glow only at the top */
+    right: initial; /* No right glow on smaller screens */
+    left: -5px; /* Glow only on the left */
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+  }
+}
