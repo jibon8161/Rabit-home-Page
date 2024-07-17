@@ -195,7 +195,7 @@ const Home = () => {
 
         <a
           href="#_"
-          class="relative rounded-3xl inline-flex items-center justify-start py-5 pl-4 pr-12 lg:w-96 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out shadow-lg shadow-orange-600 hover:pl-10 hover:pr-6 bg-orange-600 group hover:bg-orange-600 hover:shadow-orange-600 lg:mt-20 mt-12 button-glow-shadow"
+          class="relative inline-flex items-center justify-center py-5 px-12 lg:w-96 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out shadow-lg shadow-orange-600 bg-orange-600 group hover:bg-orange-600 hover:shadow-orange-600 lg:mt-20 mt-12 button-glow-shadow"
         >
           <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#171719] group-hover:h-full"></span>
           <span class="relative w-full text-center transition-colors duration-200 ease-in-out group-hover:text-white text-2xl uppercase text-black font-extrabold">
@@ -205,15 +205,21 @@ const Home = () => {
       </div>
       <div className="lg:mt-20 mt-8 text-3xl">
         <div className="flex flex-col items-center">
-          <p className="lg:text-5xl font-bold mb-8 text-orange-">Conception</p>
+          <p className="lg:text-5xl font-bold mb-8 text-orange-">
+            {"Conception".split("").map((letter, index) => (
+              <span key={index} className="glow-letter" data-letter={letter}>
+                {letter}
+              </span>
+            ))}
+          </p>
           <p className="text-8xl lg:mb-6">
             <LuArrowBigDownDash />
           </p>
         </div>
 
-        <div className="glow-container relative  ">
+        <div className="glow-container relative   ">
           <img
-            className="absolute right-14 bottom-5 z-50 lg:block hidden  "
+            className="absolute lg:right-14 lg:bottom-5 z-50 -right-[22px] bottom-[777px] lg:w-[540px] 2xl:right-96  md:w-[650px] md:bottom-[230px] md:-right-16 md:block hidden "
             src={img7}
             alt=""
           />

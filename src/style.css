@@ -63,10 +63,11 @@
   }
 }
 /* styles.css */
+/* styles.css */
 .button-glow-shadow {
   position: relative;
   transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-  border-radius: inherit;
+  border-radius: 1.5rem; /* Equivalent to rounded-3xl in Tailwind CSS */
 }
 
 .button-glow-shadow::before {
@@ -98,24 +99,80 @@
   }
 }
 
-@media (max-width: 1023px) {
-  .button-glow-shadow::before {
-    bottom: initial;
-    top: -5px;
-    right: initial;
-    left: -5px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
-  }
-
-  .button-glow-shadow:hover {
-    transform: none;
-    box-shadow: none;
-  }
-}
-
 @media (min-width: 1024px) and (max-width: 1280px) {
   .button-glow-shadow:hover {
     transform: scale(1.01);
+  }
+}
+
+.glow-letter {
+  position: relative;
+  display: inline-block;
+}
+
+.glow-letter::before {
+  content: attr(data-letter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  color: rgba(255, 69, 0, 1); /* Brighter orange glow */
+  filter: blur(8px); /* Increase blur for a stronger glow */
+  opacity: 1; /* Higher opacity for a more intense glow */
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: blur(8px);
+    opacity: 1;
+  }
+  to {
+    filter: blur(12px); /* Increased blur for animation */
+    opacity: 1;
+  }
+}
+.img-container {
+  position: absolute;
+  z-index: 50;
+  bottom: 777px;
+  right: -22px; /* Default right position for most screens */
+  width: 180px; /* Default width for smaller screens */
+}
+
+@media (max-width: 319px) {
+  .img-container {
+    right: -22px; /* Adjusted right position for below 320px screens */
+    width: 140px; /* Adjusted width for below 320px screens */
+  }
+}
+
+@media (min-width: 320px) {
+  .img-container {
+    /* Styles for screens 320px and above remain unchanged */
+  }
+}
+
+@media (min-width: 640px) {
+  .img-container {
+    right: 14px; /* Adjusted right position for lg screens */
+    bottom: 5px;
+    width: 540px; /* Adjusted width for lg screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .img-container {
+    right: -16px; /* Adjusted right position for md screens */
+    bottom: 230px;
+    width: 650px; /* Adjusted width for md screens */
+  }
+}
+
+@media (min-width: 1536px) {
+  .img-container {
+    right: -96px; /* Adjusted right position for 2xl screens */
   }
 }
