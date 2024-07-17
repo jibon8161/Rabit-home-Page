@@ -24,14 +24,14 @@ const Home = () => {
         <div className="hidden lg:grid grid-cols-12 gap-4 mt-8 ">
           <div className="col-span-2 p-2 border-orange-600 hover:border-white shadow-lg">
             <a href="www" className="btn btn-circle mr-8">
-              <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-white">
+              <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
                 <span className="text-orange-600 text-4xl">
                   <BsTwitterX />
                 </span>
               </div>
             </a>
             <a href="https://www.google.com" className="btn btn-circle">
-              <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-white p-4 ml-2">
+              <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-orange-600 p-4 ml-2">
                 <span className="text-orange-600 text-4xl">
                   <PiTelegramLogo />
                 </span>
@@ -47,7 +47,7 @@ const Home = () => {
               <img src={dlr} alt="Dollar" className="w-[36rem]" />
             </div>
 
-            <p className="border-b-4 border-[#0000f7] shadow-xl shadow-white rounded-full  uppercase text-3xl font-extrabold text-orange-600 mt-4">
+            <p className="border-b-4 border-orange-600 shadow-xl shadow-orange-600 rounded-full  uppercase text-3xl font-extrabold text-orange-600 mt-4 ">
               <span className=""> Rabbit Star coin</span>
             </p>
           </div>
@@ -172,7 +172,7 @@ const Home = () => {
             src={img7}
             alt=""
           /> */}
-          <p className="col-span-full text-xl font-light text-center text-orange-600">
+          <p className="col-span-full text-xl font-extrabold text-center text-orange-600 ">
             Climb the ranks from a humble beginner to the esteemed Grand Master
             of a tier-1 crypto exchange. <br /> Purchase upgrades, conquer
             challenges, invite friends, and ascend to greatness.
@@ -192,12 +192,12 @@ const Home = () => {
 
           <span className=" lg:text-4xl text-base "> Play Now</span>
         </button> */}
+
         <a
           href="#_"
-          class="relative rounded-full inline-flex items-center justify-start py-5 pl-4 pr-12  lg:w-96  overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out shadow-lg shadow-white hover:pl-10 hover:pr-6 bg-orange-600 group hover:bg-orange-600 hover:shadow-orange-600 lg:mt-20 mt-12"
+          class="relative rounded-3xl inline-flex items-center justify-start py-5 pl-4 pr-12 lg:w-96 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out shadow-lg shadow-orange-600 hover:pl-10 hover:pr-6 bg-orange-600 group hover:bg-orange-600 hover:shadow-orange-600 lg:mt-20 mt-12 button-glow-shadow"
         >
           <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#171719] group-hover:h-full"></span>
-
           <span class="relative w-full text-center transition-colors duration-200 ease-in-out group-hover:text-white text-2xl uppercase text-black font-extrabold">
             Play Now
           </span>
@@ -205,15 +205,18 @@ const Home = () => {
       </div>
       <div className="lg:mt-20 mt-8 text-3xl">
         <div className="flex flex-col items-center">
-          <p className="lg:text-5xl font-bold mb-8">Conception</p>
+          <p className="lg:text-5xl font-bold mb-8 text-orange-">Conception</p>
           <p className="text-8xl lg:mb-6">
             <LuArrowBigDownDash />
           </p>
         </div>
-     
 
         <div className="glow-container relative  ">
-          <img className="absolute right-14 bottom-5 z-50 lg:block hidden  " src={img7} alt="" />
+          <img
+            className="absolute right-14 bottom-5 z-50 lg:block hidden  "
+            src={img7}
+            alt=""
+          />
           <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-6 multi-glow-shadow">
             <div className="lg:w-1/4">
               <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
@@ -245,7 +248,7 @@ const Home = () => {
           </div>
 
           {/* September 2024 */}
-          <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12 multi-glow-shadow mt-5">
+          <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5  multi-glow-shadow mt-5">
             <div className="lg:w-1/4">
               <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
                 September 2024
@@ -285,8 +288,8 @@ const Home = () => {
             </div>
             <div className="lg:w-3/4 text-left text-base">
               <p>
-                Many more surprises await, <br /> but we'll keep them secret <br /> to
-                preserve your excitement.
+                Many more surprises await, <br /> but we'll keep them secret{" "}
+                <br /> to preserve your excitement.
               </p>
             </div>
           </div>
@@ -294,14 +297,14 @@ const Home = () => {
       </div>
       <div className="col-span-2 p-2 border-orange-600 hover:border-white shadow-lg mt-20">
         <a href="www" className="btn btn-circle mr-8">
-          <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-white">
+          <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
             <span className="text-red-600 text-4xl">
               <FaYoutube />
             </span>
           </div>
         </a>
         <a href="https://www.google.com" className="btn btn-circle">
-          <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-white p-4 ml-2">
+          <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-orange-600 p-4 ml-2">
             <span className="text-orange-600 text-4xl">
               <PiTelegramLogo />
             </span>
