@@ -1,8 +1,15 @@
 /* styles.css */
+.glow-container {
+  overflow: hidden; /* Contain the shadow within the element's bounds */
+}
+
 .multi-glow-shadow {
   position: relative;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
   margin-bottom: 20px; /* Adds space between the divs */
+  border-radius: 15px; /* Rounded corners */
+  background: linear-gradient(135deg, #171719, #1f1f1f); /* Subtle gradient background */
+  padding: 20px; /* Add some padding */
 }
 
 .multi-glow-shadow::before {
@@ -14,21 +21,23 @@
   height: 100%;
   z-index: -1;
   border-radius: inherit;
-  box-shadow: 0 0 10px 5px rgba(255, 69, 0, 0.7), /* orange glow */
-              0 0 20px 10px rgba(255, 0, 0, 0.5); /* red glow */
+  box-shadow: 0 0 15px 10px rgba(255, 69, 0, 0.7), /* enhanced orange glow */
+              0 0 25px 15px rgba(255, 0, 0, 0.5); /* enhanced red glow */
   animation: glow 2s infinite alternate;
 }
 
 .multi-glow-shadow:hover {
-  transform: scale(1.05);
+ transform: scale(1.08);
+  box-shadow: 0 0 10px 5px rgba(255, 69, 0, 0.8), /* enhanced hover shadow */
+              0 0 20px 10px rgba(255, 0, 0, 0.6); /* enhanced hover shadow */
 }
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 10px 5px rgba(255, 69, 0, 0.7), 0 0 20px 10px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 15px 10px rgba(255, 69, 0, 0.7), 0 0 25px 15px rgba(255, 0, 0, 0.5);
   }
   to {
-    box-shadow: 0 0 15px 7px rgba(255, 69, 0, 0.9), 0 0 25px 12px rgba(255, 0, 0, 0.7);
+    box-shadow: 0 0 20px 15px rgba(255, 69, 0, 0.9), 0 0 30px 20px rgba(255, 0, 0, 0.7);
   }
 }
 
@@ -40,5 +49,16 @@
     left: -5px; /* Glow only on the left */
     width: calc(100% + 10px);
     height: calc(100% + 10px);
+  }
+
+  .multi-glow-shadow:hover {
+    transform: none; /* Disable hover transform effect on smaller screens */
+    box-shadow: none; /* Disable hover shadow effect on smaller screens */
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .multi-glow-shadow:hover {
+    transform: scale(1.01); /* Reduce scale to fit within the screen on medium screens */
   }
 }

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { PiTelegramLogo } from "react-icons/pi";
 import { BsTwitterX } from "react-icons/bs";
 import dlr from "./asset/logo.png";
-import img9 from "./asset/9.png";
-import img7 from "./asset/7.png";
+
+import img7 from "./asset/first_upload-removebg-preview.png";
 import "./style.css";
 import { FaYoutube } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
@@ -15,7 +15,7 @@ const Home = () => {
     const [isHovering1, setIsHovering1] = useState(false);
     const [isHovering2, setIsHovering2] = useState(false);
   const [isHovering3, setIsHovering3] = useState(false);
-  const [isHovered5, setIsHovered5] = useState(false);
+  // const [isHovered5, setIsHovered5] = useState(false);
 
   return (
     <div className="text-[#ff5f1f] ">
@@ -210,77 +210,85 @@ const Home = () => {
             <LuArrowBigDownDash />
           </p>
         </div>
-        <div className="container mx-auto p-4 w-full lg:flex justify-evenly  items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-6">
-          <div className="lg:w-1/4">
-            <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
-              November 2024
-            </p>
-          </div>
-          <div className="lg:w-3/4 text-left text-base">
-            <ul className="list-disc ml-5">
-              <li>Basic game</li>
-              <li>Earn tasks</li>
-              <li>Gift Card</li>
-            </ul>
-          </div>
-        </div>
+     
 
-        <div className="container mx-auto p-4 w-full lg:flex justify-between items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12">
-          <div className="lg:w-1/4">
-            <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
-              October 2024
-            </p>
+        <div className="glow-container relative  ">
+          <img className="absolute right-14 bottom-5 z-50 lg:block hidden  " src={img7} alt="" />
+          <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-6 multi-glow-shadow">
+            <div className="lg:w-1/4">
+              <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
+                November 2024
+              </p>
+            </div>
+            <div className="lg:w-3/4 text-left text-base">
+              <ul className="list-disc ml-5">
+                <li>Basic game</li>
+                <li>Earn tasks</li>
+                <li>Gift Card</li>
+              </ul>
+            </div>
           </div>
-          <div className="lg:w-3/4 text-left text-base">
-            <ul className="list-disc ml-5">
-              <li>Web 3 pre-listing Quest</li>
-              <li>Integrating wallets into the game</li>
-              <li>Building on-chain infrastructure</li>
-            </ul>
+          {/* October 2024 */}
+          <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12 multi-glow-shadow ">
+            <div className="lg:w-1/4">
+              <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
+                October 2024
+              </p>
+            </div>
+            <div className="lg:w-3/4 text-left text-base">
+              <ul className="list-disc ml-5">
+                <li>Web 3 pre-listing Quest</li>
+                <li>Integrating wallets into the game</li>
+                <li>Building on-chain infrastructure</li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div className="container mx-auto p-4 w-full lg:flex justify-between items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12">
-          <div className="lg:w-1/4">
-            <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
-              September 2024
-            </p>
+          {/* September 2024 */}
+          <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12 multi-glow-shadow mt-5">
+            <div className="lg:w-1/4">
+              <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
+                September 2024
+              </p>
+            </div>
+            <div className="lg:w-3/4 text-left text-base">
+              <ul className="list-disc ml-5">
+                <li>Force Rabbit Star</li>
+                <li>Token Generation</li>
+                <li>Launch of Token Utility In-Game</li>
+              </ul>
+            </div>
           </div>
-          <div className="lg:w-3/4 text-left text-base">
-            <ul className="list-disc ml-5">
-              <li>Force Rabbit Star</li>
-              <li>Token Generation</li>
-              <li>Launch of Token Utility In-Game</li>
-            </ul>
-          </div>
-        </div>
 
-        <div className="container mx-auto p-4 w-full lg:flex justify-between items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12">
-          <div className="lg:w-1/4">
-            <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
-              August 2024
-            </p>
+          {/* August 2024 */}
+          <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12 multi-glow-shadow">
+            <div className="lg:w-1/4">
+              <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
+                August 2024
+              </p>
+            </div>
+            <div className="lg:w-3/4 text-left text-base">
+              <ul className="list-disc ml-5">
+                <li>Rabbit Star Coin</li>
+                <li>Events with a time constraint</li>
+                <li>Live events</li>
+              </ul>
+            </div>
           </div>
-          <div className="lg:w-3/4 text-left text-base">
-            <ul className="list-disc ml-5">
-              <li>Rabbit Star Coin</li>
-              <li>Events with a time constraint</li>
-              <li>Live events</li>
-            </ul>
-          </div>
-        </div>
 
-        <div className="container mx-auto p-4 w-full lg:flex justify-between items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12">
-          <div className="lg:w-1/4">
-            <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
-              Start 2024
-            </p>
-          </div>
-          <div className="lg:w-3/4 text-left text-base">
-            <p>
-              Many more surprises await, <br /> but we'll keep them secret to
-              preserve your excitement.
-            </p>
+          {/* Start 2024 */}
+          <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12 multi-glow-shadow">
+            <div className="lg:w-1/4">
+              <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
+                Start 2024
+              </p>
+            </div>
+            <div className="lg:w-3/4 text-left text-base">
+              <p>
+                Many more surprises await, <br /> but we'll keep them secret <br /> to
+                preserve your excitement.
+              </p>
+            </div>
           </div>
         </div>
       </div>
