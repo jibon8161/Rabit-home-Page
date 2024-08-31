@@ -4,8 +4,8 @@ import Home from "./Home";
 
 function App() {
   useEffect(() => {
-    // Set theme dynamically when the component mounts
-    document.documentElement.setAttribute("data-theme", "");
+    // Set a default theme when the component mounts
+    document.documentElement.setAttribute("data-theme", "dark"); // Or "dark"
 
     // Clean up on unmount or when theme changes
     return () => {
