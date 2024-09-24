@@ -8,12 +8,12 @@ import "./style.css";
 import { FaYoutube } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 import { LuArrowBigDownDash } from "react-icons/lu";
-
+import { SiFacebook } from "react-icons/si";
 
 const Home = () => {
-    const [isHovering, setIsHovering] = useState(false);
-    const [isHovering1, setIsHovering1] = useState(false);
-    const [isHovering2, setIsHovering2] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isHovering1, setIsHovering1] = useState(false);
+  const [isHovering2, setIsHovering2] = useState(false);
   const [isHovering3, setIsHovering3] = useState(false);
   // const [isHovered5, setIsHovered5] = useState(false);
 
@@ -26,7 +26,7 @@ const Home = () => {
             <a href="www" className="btn btn-circle mr-8 ">
               <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
                 <span className="text-orange-600 text-4xl">
-                  <BsTwitterX />
+                  <SiFacebook />
                 </span>
               </div>
             </a>
@@ -194,7 +194,7 @@ const Home = () => {
         </button> */}
 
         <a
-          href="#_"
+          href="https://t.me/Rabbit_Star_bot"
           class="relative inline-flex items-center justify-center py-5 px-12 lg:w-96 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out shadow-lg shadow-orange-600 bg-orange-600 group hover:bg-orange-600 hover:shadow-orange-600 lg:mt-20 mt-12 button-glow-shadow"
         >
           <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#171719] group-hover:h-full"></span>
