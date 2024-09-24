@@ -22,7 +22,7 @@ const Home = () => {
       <div className="container mx-auto px-4">
         {/* Grid for desktop layout */}
         <div className="hidden lg:grid grid-cols-12 gap-4 mt-8 ">
-          <div className="col-span-2 p-2 border-orange-600 hover:border-white shadow-lg">
+          <div className="col-span-2 p-2 border-orange-600 hover:border-white">
             <a href="www" className="btn btn-circle mr-8 ">
               <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
                 <span className="text-orange-600 text-4xl">
