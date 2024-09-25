@@ -9,7 +9,7 @@ import { FaYoutube } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 import { LuArrowBigDownDash } from "react-icons/lu";
 import { SiFacebook } from "react-icons/si";
-
+import { FaInstagram } from "react-icons/fa";
 const Home = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [isHovering1, setIsHovering1] = useState(false);
@@ -22,22 +22,24 @@ const Home = () => {
       <div className="container mx-auto px-4">
         {/* Grid for desktop layout */}
         <div className="hidden lg:grid grid-cols-12 gap-4 mt-8 ">
-          <div className="col-span-2 p-2 border-orange-600 hover:border-white">
-            <a href="www" className="btn btn-circle mr-8 ">
-              <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
-                <span className="text-orange-600 text-4xl">
-                  <SiFacebook />
-                </span>
-              </div>
-            </a>
-            <a href="https://www.google.com" className="btn btn-circle">
-              <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-orange-600 p-4 ml-2">
-                <span className="text-orange-600 text-4xl">
-                  <PiTelegramLogo />
-                </span>
-              </div>
-            </a>
-            <p className="text-center mt-2 border-b-2  border-white shadow-xl shadow-orange-600 rounded-full">
+          <div className="col-span-2">
+            <div className="flex justify-evenly   p-2 border-orange-600 hover:border-white">
+              <a href="https://www.facebook.com/rabbitstarcoin" className=" ">
+                <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
+                  <span className="text-orange-600 text-4xl">
+                    <SiFacebook />
+                  </span>
+                </div>
+              </a>
+              <a href="https://t.me/RabbitStarOfficial" className="">
+                <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-orange-600 p-4 ml-2">
+                  <span className="text-orange-600 text-4xl">
+                    <PiTelegramLogo />
+                  </span>
+                </div>
+              </a>
+            </div>
+            <p className="text-center mt-2 border-b-2  border-white shadow-xl shadow-orange-600 rounded-full w-full">
               Join Us
             </p>
           </div>
@@ -106,7 +108,7 @@ const Home = () => {
             </p>
             <div className="flex lg:gap-8 justify-center md:mt-8 mt-8 mb-8 flex-wrap">
               <a
-                href="w"
+                href="https://www.youtube.com/@RabbitStarOfficially"
                 className="border rounded-full p-2 shadow-md shadow-orange-600 text-red-700 text-4xl relative"
                 onMouseEnter={() => setIsHovering1(true)}
                 onMouseLeave={() => setIsHovering1(false)}
@@ -134,7 +136,7 @@ const Home = () => {
                 )}
               </a>
               <a
-                href="w"
+                href="https://x.com/rabbitstarcoin"
                 className="border rounded-full p-2 shadow-md shadow-orange-600 text-white text-4xl relative"
                 onMouseEnter={() => setIsHovering2(true)}
                 onMouseLeave={() => setIsHovering2(false)}
@@ -148,16 +150,16 @@ const Home = () => {
                 )}
               </a>
               <a
-                href="w"
-                className="border rounded-full p-2 shadow-md shadow-orange-600 text-blue-700 text-4xl relative"
+                href="http://instagram.com/rabbitstarofficials/"
+                className="border rounded-full p-2 shadow-md shadow-orange-600 text-purple-700 text-4xl relative"
                 onMouseEnter={() => setIsHovering3(true)}
                 onMouseLeave={() => setIsHovering3(false)}
               >
-                <PiTelegramLogo />
+                <FaInstagram />
                 {/* Conditional rendering of text */}
                 {isHovering3 && (
                   <span className="absolute bg-black text-orange-600  text-xs py-1 px-2 rounded-md bottom-0 left-1/2 transform -translate-x-1/2 -mb-8">
-                    Telegram
+                    instagram
                   </span>
                 )}
               </a>
@@ -226,7 +228,7 @@ const Home = () => {
           <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-6 multi-glow-shadow">
             <div className="lg:w-1/4">
               <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
-                November 2024
+                January 2025
               </p>
             </div>
             <div className="lg:w-3/4 text-left text-base">
@@ -241,7 +243,7 @@ const Home = () => {
           <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12 multi-glow-shadow ">
             <div className="lg:w-1/4">
               <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
-                October 2024
+                December 2024
               </p>
             </div>
             <div className="lg:w-3/4 text-left text-base">
@@ -257,7 +259,7 @@ const Home = () => {
           <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5  multi-glow-shadow mt-5">
             <div className="lg:w-1/4">
               <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
-                September 2024
+                November 2024
               </p>
             </div>
             <div className="lg:w-3/4 text-left text-base">
@@ -273,7 +275,7 @@ const Home = () => {
           <div className="container mx-auto p-4 w-full lg:flex justify-evenly items-start rounded-lg shadow-lg shadow-orange-600 bg-orange-00 text-white lg:hover:text-white lg:hover:shadow-orange-600 bg-[#171719] hover:text-orange-600 lg:mt-5 mt-12 multi-glow-shadow">
             <div className="lg:w-1/4">
               <p className="text-4xl text-left mb-2 lg:mb-0 text-white lg:text-orange-600">
-                August 2024
+                October 2024
               </p>
             </div>
             <div className="lg:w-3/4 text-left text-base">
@@ -302,21 +304,22 @@ const Home = () => {
         </div>
       </div>
       <div className="col-span-2 p-2 border-orange-600 hover:border-white shadow-lg mt-20">
-        <a href="www" className="btn btn-circle mr-8">
-          <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
-            <span className="text-red-600 text-4xl">
-              <FaYoutube />
-            </span>
-          </div>
-        </a>
-        <a href="https://www.google.com" className="btn btn-circle">
-          <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-orange-600 p-4 ml-2">
-            <span className="text-orange-600 text-4xl">
-              <PiTelegramLogo />
-            </span>
-          </div>
-        </a>
-        <p className="text-center mt-2 border-b-2  border-white shadow-xl shadow-orange-600 rounded-full"></p>
+        <div className="flex justify-center p-2 border-orange-600 hover:border-white">
+          <a href="https://www.facebook.com/rabbitstarcoin" className=" ">
+            <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
+              <span className="text-orange-600 text-4xl">
+                <SiFacebook />
+              </span>
+            </div>
+          </a>
+          <a href="https://t.me/RabbitStarOfficial" className="">
+            <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-orange-600 p-4 ml-2">
+              <span className="text-orange-600 text-4xl">
+                <PiTelegramLogo />
+              </span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   );
