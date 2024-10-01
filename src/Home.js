@@ -312,7 +312,7 @@ const Home = () => {
               </span>
             </div>
           </a>
-          <a href="https://t.me/RabbitStarOfficial" className="">
+          <a href="https://t.me/RabbitStarOfficial" target="blank" className="">
             <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-orange-600 p-4 ml-2">
               <span className="text-orange-600 text-4xl">
                 <PiTelegramLogo />
