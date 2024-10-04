@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { PiTelegramLogo } from "react-icons/pi";
 import { BsTwitterX } from "react-icons/bs";
 import dlr from "./asset/logo.png";
-
 import img7 from "./asset/first_upload-removebg-preview.png";
 import "./style.css";
 import { FaYoutube } from "react-icons/fa";
@@ -10,12 +9,66 @@ import { SiTiktok } from "react-icons/si";
 import { LuArrowBigDownDash } from "react-icons/lu";
 import { SiFacebook } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
+import tailsImage from "./asset/dlr2.png"; // Your tails image
+import { TfiEmail } from "react-icons/tfi";
+import emailjs from "@emailjs/browser"; // Updated import statement
 const Home = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [isHovering1, setIsHovering1] = useState(false);
   const [isHovering2, setIsHovering2] = useState(false);
   const [isHovering3, setIsHovering3] = useState(false);
-  // const [isHovered5, setIsHovered5] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [currentImage, setCurrentImage] = useState(dlr); // Start with heads
+
+  const form = useRef();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleModal = () => setIsOpen(!isOpen);
+
+ const sendEmail = (e) => {
+   e.preventDefault(); // Prevent default form submission behavior
+   const formData = new FormData(form.current); // Create FormData from the current form
+   const templateParams = Object.fromEntries(formData.entries()); // Convert FormData to an object
+
+   console.log("Template Params:", templateParams); // Log parameters for debugging
+
+   // Send the form data using EmailJS
+   emailjs
+     .sendForm(
+       "service_v1vf7md", // Your EmailJS service ID
+       "template_7e21ko7", // Your EmailJS template ID
+       form.current, // Reference to the form DOM element
+       "yWMA3TDkh7Tbg6h_k" // Your EmailJS user ID
+     )
+     .then(
+       (result) => {
+         console.log(result.text); // Log the success message
+         alert("Message sent successfully!"); // Notify the user of success
+         form.current.reset(); // Reset the form fields
+         toggleModal(); // Close the modal
+       },
+       (error) => {
+         console.error("Error sending email:", error.text); // Log the error message
+         alert("An error occurred. Please try again."); // Notify the user of the error
+       }
+     );
+ };
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFlipped(true);
+      setTimeout(() => {
+        // Toggle between heads and tails
+        setCurrentImage((prevImage) =>
+          prevImage === tailsImage ? tailsImage : tailsImage
+        );
+        setIsFlipped(false); // Reset the flip state after animation
+      }, 1000); // Duration matches your CSS animation
+    }, 5000); // Flip every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
 
   return (
     <div className="text-[#ff5f1f] ">
@@ -24,14 +77,22 @@ const Home = () => {
         <div className="hidden lg:grid grid-cols-12 gap-4 mt-8 ">
           <div className="col-span-2">
             <div className="flex justify-evenly   p-2 border-orange-600 hover:border-white">
-              <a href="https://www.facebook.com/rabbitstarcoin" className=" ">
+              <a
+                href="https://www.facebook.com/rabbitstarcoin"
+                target="blank"
+                className=" "
+              >
                 <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
                   <span className="text-orange-600 text-4xl">
                     <SiFacebook />
                   </span>
                 </div>
               </a>
-              <a href="https://t.me/RabbitStarOfficial" className="">
+              <a
+                href="https://t.me/RabbitStarOfficial"
+                target="blank"
+                className=""
+              >
                 <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-orange-600 p-4 ml-2">
                   <span className="text-orange-600 text-4xl">
                     <PiTelegramLogo />
@@ -45,11 +106,21 @@ const Home = () => {
           </div>
 
           <div className="col-span-8">
-            <div className="rounded-full  shadow-xl shadow-orange-600 flex justify-center items-center">
-              <img src={dlr} alt="Dollar" className="w-[36rem]" />
+            <div className="rounded-full shadow-xl shadow-orange-600 flex justify-center items-center">
+              <div className={`coin ${isFlipped ? "flip" : ""}`}>
+                <img
+                  src={tailsImage}
+                  alt="Coin"
+                  className={
+                    isFlipped
+                      ? "  lg:w-[38rem] lg:h-[38rem]"
+                      : "  lg:w-[38rem] lg:h-[38rem]"
+                  } // Different sizes based on the flip state
+                />
+              </div>
             </div>
 
-            <p className="border-b-4 border-orange-600 shadow-xl shadow-orange-600 rounded-full  uppercase text-3xl font-extrabold text-orange-600 mt-4 ">
+            <p className="border-b-4 border-orange-600 shadow-xl shadow-orange-600 rounded-full uppercase text-3xl font-extrabold text-orange-600 mt-4">
               <span className=""> Rabbit Star coin</span>
             </p>
           </div>
@@ -66,8 +137,14 @@ const Home = () => {
         {/* Flexbox for mobile and tablet layout */}
         <div className="lg:hidden flex flex-col">
           <div className="mb-4">
-            <div className="rounded-full  shadow-xl shadow-orange-600 flex justify-center items-center">
-              <img src={dlr} alt="Dollar" className="w-[16rem]" />
+            <div className="rounded-full shadow-xl shadow-orange-600 flex justify-center items-center">
+              <div className={`coin ${isFlipped ? "flip" : ""}`}>
+                <img
+                  src={currentImage}
+                  alt="Coin"
+                  className="w-[18rem] h-[18rem] md:w-[26rem] md:h-[26rem] " // Responsive sizes
+                />
+              </div>
             </div>
 
             <p className="border-b-4 border-[#0000f7] shadow-xl shadow-white rounded-full  uppercase text-2xl font-extrabold text-orange-600 mt-4">
@@ -77,25 +154,29 @@ const Home = () => {
           <div className="flex flex-wrap">
             <div className="flex-1">
               <div className="p-2 border-2 rounded-full border-orange-600 hover:border-white shadow-md shadow-white">
-                <button className="btn btn-circle mr-8">
+                <a
+                  href="https://www.facebook.com/rabbitstarcoin"
+                  target="blank"
+                  className="btn btn-circle mr-8"
+                >
                   <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-white">
                     <span className="text-orange-600 text-1xl">
-                      <BsTwitterX />
+                      <SiFacebook />
                     </span>
                   </div>
-                </button>
-                <button className="btn btn-circle">
+                </a>
+
+                <a
+                  href="https://t.me/RabbitStarOfficial"
+                  target="blank"
+                  className="btn btn-circle"
+                >
                   <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-white p-4 ml-2">
                     <span className="text-orange-600 text-1xl">
                       <PiTelegramLogo />
                     </span>
                   </div>
-                </button>
-              </div>
-              <div className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-white p-2 ml-2 mt-2">
-                <span className="text-orange-600 text-1xl">
-                  <p className="text-center">Join us</p>
-                </span>
+                </a>
               </div>
             </div>
           </div>
@@ -109,6 +190,7 @@ const Home = () => {
             <div className="flex lg:gap-8 justify-center md:mt-8 mt-8 mb-8 flex-wrap">
               <a
                 href="https://www.youtube.com/@RabbitStarOfficially"
+                target="blank"
                 className="border rounded-full p-2 shadow-md shadow-orange-600 text-red-700 text-4xl relative"
                 onMouseEnter={() => setIsHovering1(true)}
                 onMouseLeave={() => setIsHovering1(false)}
@@ -123,6 +205,7 @@ const Home = () => {
               </a>
               <a
                 href="w"
+                target="blank"
                 className="border rounded-full p-2 shadow-md shadow-orange-600 text-pink-600 text-4xl relative"
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
@@ -137,6 +220,7 @@ const Home = () => {
               </a>
               <a
                 href="https://x.com/rabbitstarcoin"
+                target="blank"
                 className="border rounded-full p-2 shadow-md shadow-orange-600 text-white text-4xl relative"
                 onMouseEnter={() => setIsHovering2(true)}
                 onMouseLeave={() => setIsHovering2(false)}
@@ -151,7 +235,8 @@ const Home = () => {
               </a>
               <a
                 href="http://instagram.com/rabbitstarofficials/"
-                className="border rounded-full p-2 shadow-md shadow-orange-600 text-purple-700 text-4xl relative"
+                target="blank"
+                className="border rounded-full p-2 shadow-md shadow-orange-600 text-orange-600 text-4xl relative"
                 onMouseEnter={() => setIsHovering3(true)}
                 onMouseLeave={() => setIsHovering3(false)}
               >
@@ -305,7 +390,11 @@ const Home = () => {
       </div>
       <div className="col-span-2 p-2 border-orange-600 hover:border-white shadow-lg mt-20">
         <div className="flex justify-center p-2 border-orange-600 hover:border-white">
-          <a href="https://www.facebook.com/rabbitstarcoin" className=" ">
+          <a
+            href="https://www.facebook.com/rabbitstarcoin"
+            target="blank"
+            className=" "
+          >
             <div className="rounded-full border-2 hover:border-orange-600 hover:animate-pulse p-4 ml-2 shadow-lg shadow-orange-600">
               <span className="text-orange-600 text-4xl">
                 <SiFacebook />
@@ -319,6 +408,78 @@ const Home = () => {
               </span>
             </div>
           </a>
+          <div className="relative">
+            {/* Button to open the modal */}
+            <button
+              className="rounded-full border-2 hover:animate-pulse hover:border-orange-600 shadow-lg shadow-orange-600 p-4 ml-2"
+              onClick={toggleModal}
+            >
+              <span className="text-orange-600 text-4xl">
+                <TfiEmail />
+              </span>
+            </button>
+
+            {/* Modal */}
+            {isOpen && (
+              <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+                <div className="bg-black p-8 rounded-lg shadow-2xl w-full max-w-md relative">
+                  {/* Close button */}
+                  <button
+                    className="absolute top-3 right-3 text-black hover:text-orange-600 transition duration-300"
+                    onClick={toggleModal}
+                  >
+                    <span className="text-2xl font-bold">✖</span>
+                  </button>
+
+                  <h2 className="text-2xl font-semibold mb-6 text-center text-orange-600">
+                    Contact for Proposal or Advertisement
+                  </h2>
+
+                  <form ref={form} onSubmit={sendEmail}>
+                    {[
+                      "Name",
+                      "Mobile Number",
+                      "Email Address",
+                      "Website/YouTube Link",
+                    ].map((label, index) => (
+                      <div className="mb-4" key={index}>
+                        <label className="block text-gray-800 text-sm mb-2 font-medium">
+                          {label}:
+                        </label>
+                        <input
+                          type={label === "Email Address" ? "email" : "text"}
+                          name={label.replace(/ /g, "_").toLowerCase()} // Name for EmailJS
+                          required
+                          className="w-full border border-gray-300 p-3 rounded-md bg-orange-100 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-300"
+                          placeholder={`Enter your ${label.toLowerCase()}`}
+                        />
+                      </div>
+                    ))}
+
+                    <div className="mb-4">
+                      <label className="block text-gray-800 text-sm mb-2 font-medium">
+                        Send your offer/collaboration:
+                      </label>
+                      <textarea
+                        rows="4"
+                        name="message" // Name for EmailJS
+                        required
+                        className="w-full border border-gray-300 p-3 rounded-md bg-orange-200 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-300"
+                        placeholder="Describe your offer..."
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full bg-orange-600 text-white p-3 rounded-md hover:bg-orange-700 transition duration-300 shadow-lg"
+                    >
+                      Send
+                    </button>
+                  </form>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
